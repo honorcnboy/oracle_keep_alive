@@ -3,7 +3,7 @@
 # default values:
 # cpu: 12.5%
 # memory: 1/6(just work on arm instance)
-# network: 1M/s
+# network: 3M/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
 
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 1M;
+        curl -skLo /dev/null "${durl}" --limit-rate 3M;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 12.5 percents & download file with 1M/s speed
+    Description=cpu stress 12.5 percents & download file with 3M/s speed
     After=network.target
 
     [Service]
