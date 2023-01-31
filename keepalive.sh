@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # default values:
-# cpu: 27%
-# memory: 1/5(just work on arm instance)
-# network: 7M/s
+# cpu: 17%
+# memory: 1/3(just work on arm instance)
+# network: 6M/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
 
@@ -36,7 +36,7 @@ eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 27 percents & download file with 10M/s speed
+    Description=cpu stress 17 percents & download file with 10M/s speed
     After=network.target
 
     [Service]
@@ -58,7 +58,7 @@ set_mem () {
     [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
     mem_count=\$(free -m|awk '/^Mem/{print \$2}');
-    ((mem_use=mem_count*1/5));
+    ((mem_use=mem_count/3));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
     dd if=/dev/zero of=/ramdisk/dd.img bs=1M count=\${img_size} &>/dev/null; 
