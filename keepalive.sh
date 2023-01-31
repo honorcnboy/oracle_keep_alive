@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # default values:
-# cpu: 17%
+# cpu: 20%
 # memory: 1/5(just work on arm instance)
 # network: 6M/s
 
@@ -17,7 +17,7 @@ ins_opt () {
 }
 
 set_cpu_net () {
-    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*100/4}');
+    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*100/5}');
     [ -d "/opt/shuaibi" ] || mkdir -p /opt/shuaibi;
     cat << eof > /opt/shuaibi/cpu_net.sh;
     cpuc=$(lscpu | awk '/^CPU\(/{print $NF}');
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 10M;
+        curl -skLo /dev/null "${durl}" --limit-rate 6M;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 17 percents & download file with 10M/s speed
+    Description=cpu stress 20 percents & download file with 6M/s speed
     After=network.target
 
     [Service]
