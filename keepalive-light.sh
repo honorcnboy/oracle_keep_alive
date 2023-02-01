@@ -2,7 +2,7 @@
 
 # default values:
 # cpu: 11%
-# memory: 1/8(just work on arm instance)
+# memory: 1/7(just work on arm instance)
 # network: 30K/s-150K/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
@@ -60,7 +60,7 @@ set_mem () {
     [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
     mem_count=\$(free -m|awk '/^Mem/{print \$2}');
-    ((mem_use=mem_count/8));
+    ((mem_use=mem_count/7));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
     dd if=/dev/zero of=/ramdisk/dd.img bs=${RANDOM_RATE} count=\${img_size} &>/dev/null; 
