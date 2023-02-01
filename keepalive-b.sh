@@ -3,7 +3,7 @@
 # default values:
 # cpu: 12.5%
 # memory: 1/6(just work on arm instance)
-# network: 500K/s
+# network: 300K/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
 
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 500K;
+        curl -skLo /dev/null "${durl}" --limit-rate 300K;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 12.5 percents & download file with 500K/s speed
+    Description=cpu stress 12.5 percents & download file with 300K/s speed
     After=network.target
     [Service]
     Type=simple
@@ -59,7 +59,7 @@ set_mem () {
     ((mem_use=mem_count/6));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
-    dd if=/dev/zero of=/ramdisk/dd.img bs=1M count=\${img_size} &>/dev/null; 
+    dd if=/dev/zero of=/ramdisk/dd.img bs=300K count=\${img_size} &>/dev/null; 
 eof
     /bin/bash /opt/shuaibi/mem.sh && \
     cat << eof >> /etc/crontab
