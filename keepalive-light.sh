@@ -3,12 +3,12 @@
 # default values:
 # cpu: 11%
 # memory: 1/8(just work on arm instance)
-# network: 30K/s-120K/s
+# network: 30K/s-150K/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
 
 MIN_RATE=30K
-MAX_RATE=120K
+MAX_RATE=150K
 RANDOM_RATE=$((MIN_RATE + $RANDOM % (MAX_RATE - MIN_RATE + 1)))
 
 ins_opt () {
