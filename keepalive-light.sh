@@ -56,14 +56,14 @@ eof
 }
 
 set_mem () {
-    cat << eof > /opt/shuaibi/mem.sh;
+    cat << eof > /opt/shuaibi/mem.sh
     [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
     mem_count=\$(free -m|awk '/^Mem/{print \$2}');
     ((mem_use=mem_count/9));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
-    dd if=/dev/zero of=/ramdisk/dd.img bs=60K count=\${img_size} &>/dev/null; 
+    dd if=/dev/zero of=/ramdisk/dd.img bs=1M count=\${img_size} &>/dev/null; 
 eof
     /bin/bash /opt/shuaibi/mem.sh && \
     cat << eof >> /etc/crontab
@@ -78,5 +78,5 @@ check_env () {
 }
 
 check_env;
-set_mem;
+[[ "$(uname -m)" == "aarch64" ]] && set_mem;
 set_cpu_net;
