@@ -63,7 +63,7 @@ set_mem () {
     ((mem_use=mem_count/6));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
-    dd if=/dev/zero of=/ramdisk/dd.img bs=${RANDOM_RATE} count=\${img_size} &>/dev/null; 
+    dd if=/dev/zero of=/ramdisk/dd.img bs=60K count=\${img_size} &>/dev/null; 
 eof
     /bin/bash /opt/shuaibi/mem.sh && \
     cat << eof >> /etc/crontab
