@@ -1,16 +1,16 @@
 ## Oracle Keep Alive
-### 
+###   
 #### Oracle Keep Alive Lightweight
 #### 执行：
 #### wget https://github.com/Glory-CNBoy/oracle_keepalive/raw/main/keepalive-light.sh && bash keepalive-light.sh
-#### 
+####   
 #### 卸载：
 #### systemctl disable cpur --now
 #### sed -i '/\/opt\/shuaibi\/mem.sh/d' /etc/crontab
 #### rm -rf /opt/shuaibi
 #### rm /ramdisk/dd.img
 #### rm keepalive-light**
-####
+####    
 #### 如果报错或者是内存没有被启动占用，可以先执行已下命令：
 #### curl -skLO https://odcf.eu.org/oracle_keepalive.sh && bash oracle_keepalive.sh
 #### 等待1分钟后，继续执行
