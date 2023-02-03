@@ -1,6 +1,5 @@
 # Oracle Keep Alive Lightweight
-
-#### —— 帅B大佬的轻量修改版
+来自于帅B大佬的轻量修改版
 
 ##### 执行：
 ```bash
