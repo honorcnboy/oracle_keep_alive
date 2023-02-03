@@ -1,8 +1,8 @@
 ## Oracle Keep Alive
 ###   
 #### Oracle Keep Alive Lightweight
-#### 执行：
-#### wget https://github.com/Glory-CNBoy/oracle_keepalive/raw/main/keepalive-light.sh && bash keepalive-light.sh
+执行：
+wget https://github.com/Glory-CNBoy/oracle_keepalive/raw/main/keepalive-light.sh && bash keepalive-light.sh
 ####
 #### 停止：
 #### systemctl stop cpur
