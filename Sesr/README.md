@@ -13,10 +13,6 @@ systemctl stop KeepCPUMemory.service
 
 #### 完全卸载命令：
 ```bash
-sudo systemctl stop KeepCPUMemory.service
-sudo systemctl disable KeepCPUMemory.service
-sudo rm /etc/systemd/system/KeepCPUMemory.service
-sudo rm /etc/systemd/system/multi-user.target.wants/KeepCPUMemory.service
 sudo systemctl stop KeepCPUMemory.service KeepNetwork.service && \
 sudo systemctl disable KeepCPUMemory.service KeepNetwork.service && \
 sudo rm /etc/systemd/system/KeepCPUMemory.service /etc/systemd/system/KeepNetwork.service && \
