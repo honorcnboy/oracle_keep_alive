@@ -56,8 +56,8 @@ eof
 }
 
 set_mem () {
-    [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     cat << eof > /opt/shuaibi/mem.sh
+    [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
     mem_count=\$(free -m|awk '/^Mem/{print \$2}');
     ((mem_use=mem_count/9));
