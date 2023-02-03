@@ -1,5 +1,5 @@
 # Oracle Keep Alive Lightweight
-这是一个来自于帅B大佬的轻量修改版
+这是一个来自于帅B大佬的轻量修改版。原版及修改版均作用于CPU、内存（仅限ARM）及网络。可以自行添加两个cron task，定时启动及停止脚步运行。 
 
 #### 执行：
 ```bash
