@@ -56,6 +56,9 @@ eof
 }
 
 set_mem () {
+    if [ ! -d "/opt/shuaibi" ]; then
+        mkdir -p /opt/shuaibi
+    fi
     if [ -f "/opt/shuaibi/mem.sh" ]; then
         echo "/opt/shuaibi/mem.sh already exists."
         return
