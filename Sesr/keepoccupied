@@ -1,8 +1,19 @@
+#!/bin/bash
+
+ARCH=$(lscpu | grep Architecture | awk '{print $2}')
+if [ "$ARCH" == "x86_64" ]; then
+  CPUQuota="20%"
+elif [ "$ARCH" == "aarch64" ]; then
+  CPUQuota="40%"
+else
+  echo "Unknown architecture: $ARCH"
+  exit 1
+fi
 
 cat > /etc/systemd/system/KeepCPUMemory.service <<EOF
 [Unit]
 [Service]
-CPUQuota=40%
+CPUQuota=$CPUQuota
 ExecStart=/usr/bin/python3 /tmp/waste.py
 [Install]
 WantedBy=multi-user.target
