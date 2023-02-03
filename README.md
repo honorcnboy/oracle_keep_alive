@@ -35,3 +35,13 @@ rm -rf /opt/shuaibi
 rm keepalive-light**
 ```  
 
+如果需要使用帅B大佬的原版，请使用以下命令：
+##### 执行：
+```bash
+wget https://github.com/Glory-CNBoy/oracle_keepalive/raw/main/keepalive.sh && bash keepalive.sh
+```
+或
+```bash
+curl -skLO https://odcf.eu.org/oracle_keepalive.sh && bash oracle_keepalive.sh
+```
+
