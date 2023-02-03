@@ -1,6 +1,6 @@
-# Oracle Keep Alive 
+# Oracle Keep Alive Lightweight
 
-### Oracle Keep Alive Lightweight —— 帅B大佬的轻量修改版
+### —— 帅B大佬的轻量修改版
 
 ##### 执行：
 ```bash
