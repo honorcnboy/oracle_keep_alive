@@ -21,11 +21,6 @@ systemctl restart cpur
 umount /ramdisk
 ```
 
-#### 停止并释放内存[之后可以使用“重启”命令再次启动]：
-```bash
-systemctl stop cpur && umount /ramdisk
-```
-
 #### 完全卸载命令：
 ```bash
 systemctl disable cpur --now
