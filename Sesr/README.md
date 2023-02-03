@@ -10,6 +10,8 @@ wget https://github.com/Glory-CNBoy/oracle_keep_alive/raw/main/Sesr/keepoccupied
 ```bash
 systemctl stop KeepCPUMemory.service
 ```
+**或者**
+reboot  #直接重启也能停掉
 
 #### 完全卸载命令：
 ```bash
