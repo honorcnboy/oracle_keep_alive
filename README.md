@@ -39,7 +39,7 @@ rm keepalive-light**
 ##### 执行：
 ```bash
 wget https://github.com/Glory-CNBoy/oracle_keepalive/raw/main/keepalive.sh && bash keepalive.sh
-或者
+** 或者 **
 curl -skLO https://odcf.eu.org/oracle_keepalive.sh && bash oracle_keepalive.sh
 ```
 
