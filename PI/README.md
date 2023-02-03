@@ -12,6 +12,9 @@ nohup cpulimit -l 30   -p 22489 >/dev/null &
 scale那个代表小数点后的位数，数越大计算时间越长
 -l 那里可以控制cpu使用率0-200
 -p 那里写程序的PID，通过top命令查找，或者 ps -aux | grep bc
+
+# 直接shell死循环也可以
+nohup cpulimit -l 30 bash -c "while :;do a=1;done" > /dev/null 2>&1 &
 ```
 #### 停止
 ```bash
