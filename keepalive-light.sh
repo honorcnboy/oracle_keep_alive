@@ -56,6 +56,10 @@ eof
 }
 
 set_mem () {
+    if [ -f "/opt/shuaibi/mem.sh" ]; then
+        echo "/opt/shuaibi/mem.sh already exists."
+        return
+    fi
     cat << eof > /opt/shuaibi/mem.sh
     [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
