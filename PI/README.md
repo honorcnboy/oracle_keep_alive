@@ -1,5 +1,5 @@
 # 计算圆周率
-这是一个来自于Hostloc论坛某大佬的作品。原贴地址：https://hostloc.com/thread-1131769-1-1.html   
+出自于Hostloc论坛某大佬，原贴地址：https://hostloc.com/thread-1131769-1-1.html   
 #### 准备
 ```bash
 apt install bc -y && apt install cpulimit -y
