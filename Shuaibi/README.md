@@ -6,7 +6,7 @@ __轻量版__：CUP占用11%，内存（仅限ARM）占用11%，网络占用30K/
 
 #### 执行：
 ```bash
-wget https://github.com/Glory-CNBoy/oracle_keep_alive/raw/main/Shuaibi/keepalive-light.sh && bash keepalive-light.sh
+wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive-light.sh && bash keepalive-light.sh
 ```
 
 #### 停止：
@@ -36,7 +36,7 @@ rm keepalive-light**
 ### 如果需要使用帅B大佬的原版，请使用以下命令：
 #### 执行：
 ```bash
-wget https://github.com/Glory-CNBoy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh
+wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh
 ``` 
 __或者__
 ```bash
