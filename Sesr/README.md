@@ -3,7 +3,7 @@
 
 #### 运行命令
 ```bash
-wget https://github.com/Glory-CNBoy/oracle_keep_alive/raw/main/Sesr/keepoccupied.sh && bash keepoccupied.sh
+wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Sesr/keepoccupied.sh && bash keepoccupied.sh
 ```
 
 #### 停止：
