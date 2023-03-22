@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # default values:
-# cpu: 10%
+# cpu: 11%
 # memory: 1/9(just work on arm instance)
 # network: 30K/s-150K/s
 
@@ -40,7 +40,7 @@ eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 10 percents & download file with 30K-120K speed
+    Description=cpu stress 11 percents & download file with 30K-120K speed
     After=network.target
     [Service]
     Type=simple
