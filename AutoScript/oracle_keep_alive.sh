@@ -50,7 +50,7 @@ wait_for_next_task "$task3"
 run_task "cd /root && wget -qO- bench.sh | bash"
 
 wait_for_next_task "$task4"
-run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench | bash -s -- --full && rm -rf /root/LemonBench**.txt && rm -rf /root/2023-**"
+run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench | bash -s -- --full && rm -rf /root/LemonBench* 2023-*"
 
 wait_for_next_task "$task5"
 run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
