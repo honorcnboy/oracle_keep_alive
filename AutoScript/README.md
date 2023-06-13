@@ -1,4 +1,4 @@
-这是一个整合保活脚本。
+这是一个整合保活脚本，建议用于甲骨文的闲置小鸡上。
 
 该脚本中加入了：Yabs、Unixbench、LemonBench、Bench.sh，以及Shuaibi脚本，定时运行。
 
