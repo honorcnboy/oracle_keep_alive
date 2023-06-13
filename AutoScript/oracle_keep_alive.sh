@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 当前时间
 current_time=$(date +%H:%M:%S)
 
@@ -27,7 +26,7 @@ function wait_for_next_task {
             break
         fi
 
-        sleep_seconds=$(date -d "$next_task_time" +%s) - $(date -d "$current_time" +%s)
+        sleep_seconds=$(( $(date -d "$next_task_time" +%s) - $(date -d "$current_time" +%s) ))
         sleep $sleep_seconds
     done
 }
@@ -36,7 +35,7 @@ function wait_for_next_task {
 function run_task {
     local command=$1
 
-    $command
+    eval "$command"
 }
 
 # 等待并执行任务
