@@ -9,6 +9,7 @@ chmod +x autoscript.sh
 ./autoscript.sh
 ```
 
+
 __一键命令__：
 #### 执行：
 ```bash
