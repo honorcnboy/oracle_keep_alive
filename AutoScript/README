@@ -1,0 +1,3 @@
+cd /root
+chmod +x oracle_keep_alive.sh
+./oracle_keep_alive.sh
