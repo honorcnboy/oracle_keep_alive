@@ -1,9 +1,9 @@
 这是一个综合保活脚本。
 
-该脚本中加入了：yabs、unixbench、bench.sh、LemonBench、unixbench，以及ShuaiBi脚本，定时运行。
-
+该脚本中加入了：Yabs、Unixbench、LemonBench、Bench.sh，以及Shuaibi脚本，定时运行。
 
 具体请查看本目录下 oracle_keep_alive.sh 文件。
+
 
 
 __分步骤命令__：
