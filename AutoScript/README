@@ -1,1 +1,3 @@
-```cd /root && wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/main/AutoScript/autoscript.sh && chmod +x autoscript.sh && ./autoscript.sh
+```
+cd /root && wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/main/AutoScript/autoscript.sh && chmod +x autoscript.sh && ./autoscript.sh
+```
