@@ -49,3 +49,19 @@ for task_time in "${!tasks[@]}"; do
     wait_for_next_task "$task_time"
     run_task "${tasks[$task_time]}"
 done
+
+# 停止脚本服务：
+# sudo systemctl stop oracle_keep_alive
+
+# 重启脚本服务：
+# sudo systemctl restart oracle_keep_alive
+
+# 查看服务状态：
+# sudo systemctl status oracle_keep_alive
+
+# 卸载并完全清除本脚本服务：
+# sudo systemctl stop oracle_keep_alive
+# sudo systemctl disable oracle_keep_alive
+# sudo rm /etc/systemd/system/oracle_keep_alive.service
+# sudo systemctl daemon-reload
+# rm /root/oracle_keep_alive.sh
