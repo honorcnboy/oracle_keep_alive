@@ -16,9 +16,6 @@ WorkingDirectory=/root
 WantedBy=default.target
 EOF
 
-script_path=$(realpath "$0")
-rm -f "$0"
-
 # 加载systemd配置
 sudo systemctl daemon-reload
 
@@ -26,11 +23,6 @@ sudo systemctl daemon-reload
 sudo systemctl start oracle_keep_alive
 sudo systemctl enable oracle_keep_alive
 
-# 停止服务：
-# sudo systemctl stop oracle_keep_alive
-
-# 重启服务：
-# sudo systemctl restart oracle_keep_alive
-
-# 查看服务状态：
-# sudo systemctl status oracle_keep_alive
+# 执行完毕删除该脚本
+script_path=$(realpath "$0")
+rm -f "$0"
