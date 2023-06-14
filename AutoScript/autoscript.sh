@@ -16,6 +16,9 @@ WorkingDirectory=/root
 WantedBy=default.target
 EOF
 
+script_path=$(realpath "$0")
+rm -f "$0"
+
 # 加载systemd配置
 sudo systemctl daemon-reload
 
