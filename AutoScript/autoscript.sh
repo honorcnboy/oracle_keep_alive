@@ -1,6 +1,6 @@
 # 下载保活脚本文件
 cd /root
-wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/main/oracle_keep_alive.sh
+wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/main/AutoScript/oracle_keep_alive.sh
 chmod +x oracle_keep_alive.sh
 
 # 创建一个服务单元文件
