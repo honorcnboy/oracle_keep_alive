@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# 设定时区
+timedatectl set-timezone "Asia/Singapore"
+
 # 当前时间
 current_time=$(date +%H:%M:%S)
 
