@@ -6,19 +6,17 @@ timedatectl set-timezone "Asia/Singapore"
 # 当前时间
 current_time=$(date +%H:%M:%S)
 
-# 定义任务的时间和命令
-tasks=(
-  ["00:01:23"]="cd /root && curl -sL yabs.sh | bash && rm -rf /root/geekbench**"
-  ["01:02:34"]="cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
-  ["02:03:45"]="cd /root && wget -qO- bench.sh | bash"
-  ["03:04:56"]="cd /root && curl -fsL https://ilemonra.in/LemonBench | bash -s -- --full && rm -rf /root/LemonBench* 2023-*"
-  ["04:02:34"]="cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
-  ["05:03:45"]="cd /root && wget -qO- bench.sh | bash"
-  ["06:12:18"]="cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
-  ["11:23:45"]="systemctl stop cpur"
-  ["14:45:56"]="cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
-  ["22:34:56"]="systemctl stop cpur"
-)
+# 定义任务的时间
+task1="00:01:23"
+task2="01:02:34"
+task3="02:03:45"
+task4="03:04:56"
+task5="04:02:34"
+task6="05:03:45"
+task7="06:12:18"
+task8="11:23:45"
+task9="14:45:56"
+task10="22:34:56"
 
 # 检查并等待到达下一个任务时间
 function wait_for_next_task {
@@ -28,7 +26,7 @@ function wait_for_next_task {
     while true; do
         current_time=$(date +%H:%M:%S)
 
-        if [[ "$current_time" > "$next_task_time" ]]; then
+        if [[ $current_time > $next_task_time ]]; then
             break
         fi
 
@@ -45,10 +43,35 @@ function run_task {
 }
 
 # 等待并执行任务
-for task_time in "${!tasks[@]}"; do
-    wait_for_next_task "$task_time"
-    run_task "${tasks[$task_time]}"
-done
+wait_for_next_task "$task1"
+run_task "cd /root && curl -sL yabs.sh | bash && rm -rf /root/geekbench_claim.url"
+
+wait_for_next_task "$task2"
+run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
+
+wait_for_next_task "$task3"
+run_task "cd /root && wget -qO- bench.sh | bash"
+
+wait_for_next_task "$task4"
+run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench | bash -s -- --full && rm -rf /root/LemonBench* 2023-*"
+
+wait_for_next_task "$task5"
+run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
+
+wait_for_next_task "$task6"
+run_task "cd /root && wget -qO- bench.sh | bash"
+
+wait_for_next_task "$task7"
+run_task "cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
+
+wait_for_next_task "$task8"
+run_task "systemctl stop cpur"
+
+wait_for_next_task "$task9"
+run_task "cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
+
+wait_for_next_task "$task10"
+run_task "systemctl stop cpur"
 
 # 停止脚本服务：
 # sudo systemctl stop oracle_keep_alive
