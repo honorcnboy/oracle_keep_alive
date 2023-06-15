@@ -1,15 +1,12 @@
+检查下面的脚步代码是否存在问题，能否正常执行？还有哪里需要修改、或是完善的地方吗？
 #!/bin/bash
 
 # default values:
 # cpu: 17%
 # memory: 20%(just work on arm instance)
-# network: 900K/s-2M/s
+# network: 2M/s
 
-durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-11.6.0-amd64-DVD-1.iso";
-
-MIN_RATE=921600
-MAX_RATE=2097152
-RANDOM_RATE=$((MIN_RATE + $RANDOM % (MAX_RATE - MIN_RATE + 1)))
+durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso";
 
 ins_opt () {
     command -v apt &>/dev/null && ins='apt'
@@ -33,7 +30,7 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate "${RANDOM_RATE}";
+        curl -skLo /dev/null "${durl}" --limit-rate 2M;
     done
     wait
 eof
