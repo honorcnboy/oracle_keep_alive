@@ -7,13 +7,14 @@ chmod +x oracle_keep_alive.sh
 sudo tee /etc/systemd/system/oracle_keep_alive.service > /dev/null <<EOF
 [Unit]
 Description=Oracle Keep Alive
+After=network.target
 
 [Service]
 ExecStart=/root/oracle_keep_alive.sh
-WorkingDirectory=/root
+Restart=always
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
 EOF
 
 # 加载systemd配置
