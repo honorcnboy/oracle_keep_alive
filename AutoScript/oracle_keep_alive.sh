@@ -28,7 +28,7 @@ function wait_for_next_task {
     while true; do
         current_time=$(date +%H:%M:%S)
 
-        if [[ $current_time > $next_task_time ]]; then
+        if [[ "$current_time" > "$next_task_time" ]]; then
             break
         fi
 
