@@ -29,7 +29,7 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 1.5M;
+        curl -skLo /dev/null "${durl}" --limit-rate 1500K;
     done
     wait
 eof
