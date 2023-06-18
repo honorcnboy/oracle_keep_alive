@@ -44,31 +44,31 @@ function run_task {
 
 # 等待并执行任务
 wait_for_next_task "$task1"
-run_task "cd /root && curl -sL yabs.sh | bash && rm -rf /root/geekbench_claim.url"
+run_task "cd /root && curl -sL yabs.sh | bash && rm -rf /root/geekbench*"
 
 wait_for_next_task "$task2"
-run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
+run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unix*"
 
 wait_for_next_task "$task3"
-run_task "cd /root && wget -qO- bench.sh | bash"
+run_task "cd /root && wget -qO- bench.sh | bash && rm -rf /root/.abench"
 
 wait_for_next_task "$task4"
-run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench | bash -s -- --full && rm -rf /root/LemonBench* 2023-*"
+run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full && rm -rf /root/Lemon* /root/2023* /root/*@* /root/.LemonBench"
 
 wait_for_next_task "$task5"
-run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench**"
+run_task "cd /root && wget --no-check-certificate https://github.com/teddysun/across/raw/master/unixbench.sh && chmod +x unixbench.sh && ./unixbench.sh && rm -rf /root/unixbench*"
 
 wait_for_next_task "$task6"
 run_task "cd /root && wget -qO- bench.sh | bash"
 
 wait_for_next_task "$task7"
-run_task "cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
+run_task "cd /root && rm -rf /root/keepalive* && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
 
 wait_for_next_task "$task8"
 run_task "systemctl stop cpur"
 
 wait_for_next_task "$task9"
-run_task "cd /root && rm -rf /root/keepalive** && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
+run_task "cd /root && rm -rf /root/keepalive* && wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh"
 
 wait_for_next_task "$task10"
 run_task "systemctl stop cpur"
