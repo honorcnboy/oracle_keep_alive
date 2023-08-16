@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # default values:
-# cpu: 17%
+# cpu: 20%
 # memory: 20%(just work on arm instance)
-# network: 800K/s
+# network: 1000K/s
 
 durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso";
 
@@ -17,7 +17,7 @@ ins_opt () {
 }
 
 set_cpu_net () {
-    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*17}');
+    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*20}');
     [ -d "/opt/shuaibi" ] || mkdir -p /opt/shuaibi;
     cat << eof > /opt/shuaibi/cpu_net.sh;
     cpuc=$(lscpu | awk '/^CPU\(/{print $NF}');
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 800K;
+        curl -skLo /dev/null "${durl}" --limit-rate 1000K;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 17 percents & download file with 800K/s speed
+    Description=cpu stress 20 percents & download file with 1000K/s speed
     After=network.target
     [Service]
     Type=simple
