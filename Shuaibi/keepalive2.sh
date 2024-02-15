@@ -65,8 +65,8 @@ set_stress () {
             vurl="\${vir_lg[\${url_id}]}";
             vir_let=\$(curl -skLI "\${vurl}" 2>&1|awk '/Content-Length/{print \$2}'|tr -d '\r');
             ((vir_let>1048576)) \
-                && curl -skLo /dev/null "\${vurl}" --limit-rate 10M \
-                || curl -skLo /dev/null "\${durl}" --limit-rate 10M;
+                && curl -skLo /dev/null "\${vurl}" --limit-rate 1000M \
+                || curl -skLo /dev/null "\${durl}" --limit-rate 1000M;
         }
     done
     wait
