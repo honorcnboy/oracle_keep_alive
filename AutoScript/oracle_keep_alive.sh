@@ -22,7 +22,7 @@ task11="07:23:45"
 # 检查并等待到达下一个任务时间
 function wait_for_next_task {
     local next_task_time=$1
-    local sleep_seconds
+    local random_delay=$((RANDOM % 600 - 300)) 
 
     while true; do
         current_time=$(date +%H:%M:%S)
@@ -31,7 +31,11 @@ function wait_for_next_task {
             break
         fi
 
-        sleep_seconds=$(( $(date -d "$next_task_time" +%s) - $(date -d "$current_time" +%s) ))
+        sleep_seconds=$(( $(date -d "$next_task_time" +%s) - $(date -d "$current_time" +%s) + random_delay ))
+        if [ $sleep_seconds -le 0 ]; then
+            break
+        fi
+
         sleep $sleep_seconds
     done
 }
