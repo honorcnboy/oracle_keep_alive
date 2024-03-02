@@ -69,7 +69,7 @@ wait_for_next_task "$task8"
 run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full"
 
 wait_for_next_task "$task9"
-run_task "rm -rf /root/LemonBench* /root/geekbench* /root/unixbench* /root/.LemonBench  /root/.abench /root/202* "
+run_task "rm -rf /root/LemonBench* /root/geekbench* /root/unixbench* /root/.LemonBench /root/.abench /root/202* "
 
 wait_for_next_task "$task10"
 run_task "sudo systemctl restart cpur"
