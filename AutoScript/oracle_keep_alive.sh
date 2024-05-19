@@ -16,8 +16,9 @@ task6="05:30:55"
 task7="06:45:00"
 task8="08:00:11"
 task9="09:15:22"
-task10="23:45:56"
-task11="07:23:45"
+task10="10:30:33"
+task11="23:45:56"
+task12="07:45:56"
 
 # 检查并等待到达下一个任务时间
 function wait_for_next_task {
@@ -70,15 +71,18 @@ wait_for_next_task "$task7"
 run_task "cd /root && wget -qO- bench.sh | bash"
 
 wait_for_next_task "$task8"
-run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full"
+run_task "cd /root && curl -sL network-speed.xyz | bash"
 
 wait_for_next_task "$task9"
-run_task "rm -rf /root/LemonBench* /root/geekbench* /root/unixbench* /root/.LemonBench /root/.abench /root/202* "
+run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full"
 
 wait_for_next_task "$task10"
-run_task "sudo systemctl restart cpur"
+run_task "rm -rf /root/LemonBench* /root/geekbench* /root/unixbench* /root/.LemonBench /root/.abench /root/202*"
 
 wait_for_next_task "$task11"
+run_task "sudo systemctl restart cpur"
+
+wait_for_next_task "$task12"
 run_task "sudo systemctl stop cpur"
 
 # 停止脚本服务：
