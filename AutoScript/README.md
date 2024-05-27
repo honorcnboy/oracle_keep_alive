@@ -1,6 +1,6 @@
 这是一个整合保活脚本，建议用于甲骨文的闲置（也可以是轻量使用的）小鸡上。
 
-该脚本中加入了：Yabs、Unixbench、LemonBench、Bench.sh，以及Shuaibi脚本，定时运行。
+该脚本中加入了：Yabs、Unixbench、LemonBench、Bench.sh，以及Shuaibi等脚本，定时运行。
 
 具体请查看本目录下 oracle_keep_alive.sh 文件。
 
