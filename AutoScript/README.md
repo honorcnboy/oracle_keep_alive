@@ -19,3 +19,4 @@ __一键命令__：
 ```bash
 cd /root && wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/main/AutoScript/autoscript.sh && chmod +x autoscript.sh && ./autoscript.sh
 ```
+因TASK8 流量消耗较大，约130G/次，所以默认停用。如有需要可自行启用
