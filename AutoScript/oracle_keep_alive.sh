@@ -152,8 +152,4 @@ run_task "task12" "sudo systemctl stop cpur"
 # sudo systemctl status oracle_keep_alive
 
 # 卸载并完全清除本脚本服务：
-# sudo systemctl stop oracle_keep_alive
-# sudo systemctl disable oracle_keep_alive
-# sudo rm /etc/systemd/system/oracle_keep_alive.service
-# sudo systemctl daemon-reload
-# rm /root/oracle_keep_alive.sh
+# sudo systemctl stop oracle_keep_alive && sudo systemctl disable oracle_keep_alive && sudo rm /etc/systemd/system/oracle_keep_alive.service && sudo systemctl daemon-reload && rm /root/oracle_keep_alive.sh
