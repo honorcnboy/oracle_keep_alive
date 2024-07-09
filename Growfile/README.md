@@ -4,5 +4,5 @@
 
 #### 执行：
 ```bash
-wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Growfile/growfile.sh && chmod +x growfile.sh && bash growfile.sh
+wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Growfile/growfile.sh && chmod +x growfile.sh && nohup ./growfile.sh &
 ```
