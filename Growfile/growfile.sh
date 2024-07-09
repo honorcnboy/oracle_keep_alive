@@ -18,12 +18,12 @@ do
     sleep 1
   done
 
-  # 等待60分钟
-  sleep 3600
+  # 等待100分钟
+  sleep 6000
 
   # 删除文件
   rm $FILENAME
 
-  # 等待60分钟
-  sleep 3600
+  # 等待50分钟
+  sleep 3000
 done
