@@ -1,5 +1,6 @@
-#!/bin/bash
 # 这个脚本将按秒平均增长文件大小，每秒增加3.6MB，持续3600秒（60分钟）。然后等待120分钟后删除文件并，删除后等待60分钟再次从头开始
+
+#!/bin/bash
 
 # 设置文件名
 FILENAME="growfile"
@@ -27,3 +28,8 @@ do
   # 等待60分钟
   sleep 3600
 done
+
+
+  # 结束进行命令
+# ps aux | grep growfile.sh
+# kill -9 12345
