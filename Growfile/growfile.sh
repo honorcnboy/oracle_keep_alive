@@ -14,7 +14,7 @@ do
   for i in {1..3600}  # 60分钟*60秒
   do
     # 每秒增加3.6MB
-    dd if=/dev/zero bs=3.6M count=1 >> $FILENAME
+    dd if=/dev/zero bs=3600000 count=1 >> $FILENAME 2>/dev/null
     sleep 1
   done
 
