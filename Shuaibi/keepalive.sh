@@ -3,9 +3,9 @@
 # default values:
 # cpu: 25%
 # memory: 1/3(just work on arm instance)
-# network: 1M/s
+# network: 2M/s
 
-durl="https://cdimage.ubuntu.com/ubuntustudio/dvd/current/noble-dvd-amd64.iso";
+durl="https://releases.ubuntu.com/jammy/ubuntu-22.04.4-desktop-amd64.iso";
 
 ins_opt () {
     command -v apt &>/dev/null && ins='apt'
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 1M;
+        curl -skLo /dev/null "${durl}" --limit-rate 2M;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 25 percents & download file with 1M/s speed
+    Description=cpu stress 25 percents & download file with 2M/s speed
     After=network.target
 
     [Service]
