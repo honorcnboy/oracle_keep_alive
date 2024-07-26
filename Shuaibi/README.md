@@ -36,7 +36,7 @@ rm keepalive-light**
 ### 如果需要使用帅B大佬的原版，请使用以下命令：
 #### 执行：
 ```bash
-wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && bash keepalive.sh
+wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Shuaibi/keepalive.sh && chmod +x keepalive.sh && bash keepalive.sh
 ``` 
 __或者__
 ```bash
