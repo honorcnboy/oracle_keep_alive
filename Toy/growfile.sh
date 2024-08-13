@@ -11,10 +11,10 @@ do
   > $FILENAME
 
   # 增长文件大小
-  for ((i = 1; i <= 7200; i++))  # 2小时*60分钟*60秒
+  for ((i = 1; i <= 7500; i++))  # 7500秒
   do
-    # 每秒增加3.6MB
-    dd if=/dev/zero bs=3600000 count=1 of="$FILENAME" seek=$((i-1)) 2>/dev/null
+    # 每秒增加4.2MB，最终增加约 30.76 GB
+    dd if=/dev/zero bs=4200000 count=1 of="$FILENAME" seek=$((i-1)) 2>/dev/null
     sleep 1
   done
 
