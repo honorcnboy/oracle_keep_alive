@@ -4,7 +4,7 @@
 
 #### 执行：
 ```bash
-wget https://github.com/honorcnboy/oracle_keep_alive/raw/main/Toy/growfile.sh && chmod +x growfile.sh && nohup ./growfile.sh &
+wget https://raw.githubusercontent.com/honorcnboy/oracle_keep_alive/raw/main/Toy/growfile.sh && chmod +x growfile.sh && nohup ./growfile.sh &
 ```
 
 #### 终止执行：
