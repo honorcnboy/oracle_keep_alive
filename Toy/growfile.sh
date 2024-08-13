@@ -14,7 +14,7 @@ do
   for ((i = 1; i <= 7200; i++))  # 2小时*60分钟*60秒
   do
     # 每秒增加3.6MB
-    dd if=/dev/zero bs=3600000 count=1 of=$FILENAME oflag=append conv=notrunc 2>/dev/null
+    dd if=/dev/zero bs=3600000 count=1 of="$FILENAME" seek=$((i-1)) 2>/dev/null
     sleep 1
   done
 
