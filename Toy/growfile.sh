@@ -36,4 +36,4 @@ done
 #    kill -9 12345
 #
 # 3. 脚本完成后，可以清理生成的文件：
-#    rm -f growfile
+#    rm -f growfil*
