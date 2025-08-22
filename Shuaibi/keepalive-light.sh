@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # default values:
-# cpu: 20%
-# memory: 20%(just work on arm instance)
-# network: 1000K/s
+# cpu: 25%
+# memory: 25%(just work on arm instance)
+# network: 500K/s
 
-durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.0.0-amd64-DVD-1.iso";
+durl="https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-13.0.0-amd64-DVD-1.iso";
 
 ins_opt () {
     command -v apt &>/dev/null && ins='apt'
@@ -17,7 +17,7 @@ ins_opt () {
 }
 
 set_cpu_net () {
-    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*20}');
+    cpuq=$(lscpu | awk '/^CPU\(/{print $NF*25}');
     [ -d "/opt/shuaibi" ] || mkdir -p /opt/shuaibi;
     cat << eof > /opt/shuaibi/cpu_net.sh;
     cpuc=$(lscpu | awk '/^CPU\(/{print $NF}');
@@ -29,14 +29,14 @@ set_cpu_net () {
     done
     while true;
     do
-        curl -skLo /dev/null "${durl}" --limit-rate 1000K;
+        curl -skLo /dev/null "${durl}" --limit-rate 500K;
     done
     wait
 eof
 
     cat << eof > /lib/systemd/system/cpur.service
     [Unit]
-    Description=cpu stress 20 percents & download file with 1000K/s speed
+    Description=cpu stress 25 percents & download file with 500K/s speed
     After=network.target
     [Service]
     Type=simple
@@ -63,7 +63,7 @@ set_mem () {
     [ -d '/ramdisk' ] || mkdir -p /ramdisk;
     umount /ramdisk &>/dev/null;
     mem_count=\$(free -m|awk '/^Mem/{print \$2}');
-    ((mem_use=mem_count*20/100));
+    ((mem_use=mem_count*25/100));
     mount -t tmpfs -o size=\${mem_use}M tmpfs /ramdisk;
     img_size=\$(df -m /ramdisk|awk 'NR>1{print \$2-50}');
     dd if=/dev/zero of=/ramdisk/dd.img bs=1M count=\${img_size} &>/dev/null; 
