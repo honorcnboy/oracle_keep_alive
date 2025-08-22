@@ -7,18 +7,14 @@ timedatectl set-timezone "Asia/Singapore"
 current_time=$(date +%H:%M:%S)
 
 # 定义任务的时间
-task1="23:15:00"
-task2="00:30:11"
-task3="01:45:22"
-task4="03:00:33"
-task5="04:15:44"
-task6="05:30:55"
-task7="06:45:00"
-# task8="08:00:11"
-task9="09:15:22"
-task10="10:30:33"
-task11="23:45:56"
-task12="07:45:56"
+task1="00:30:11"
+task2="01:45:22"
+task3="03:00:33"
+task4="04:15:44"
+task5="05:30:55"
+task6="06:45:00"
+task7="23:45:56"
+task8="07:45:56"
 
 # 检查并等待到达下一个任务时间
 function wait_for_next_task {
@@ -62,27 +58,15 @@ wait_for_next_task "$task4"
 run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full"
 
 wait_for_next_task "$task5"
-run_task "cd /root && curl -sL yabs.sh | bash"
+run_task "cd /root && curl -sL network-speed.xyz | bash"
 
 wait_for_next_task "$task6"
-run_task "cd /root && curl -sL https://github.com/teddysun/across/raw/master/unixbench.sh | bash"
-
-wait_for_next_task "$task7"
-run_task "cd /root && wget -qO- bench.sh | bash"
-
-# wait_for_next_task "$task8"
-# run_task "cd /root && curl -sL network-speed.xyz | bash"
-
-wait_for_next_task "$task9"
-run_task "cd /root && curl -fsL https://ilemonra.in/LemonBench-Beta | bash -s -- --full"
-
-wait_for_next_task "$task10"
 run_task "rm -rf /root/LemonBench* /root/geekbench* /root/unixbench* /root/.LemonBench /root/.abench /root/202*"
 
-wait_for_next_task "$task11"
+wait_for_next_task "$task7"
 run_task "sudo systemctl restart cpur"
 
-wait_for_next_task "$task12"
+wait_for_next_task "$task8"
 run_task "sudo systemctl stop cpur"
 
 
